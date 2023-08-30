@@ -1,0 +1,33 @@
+<div class="body">
+    <div class="left">
+        Create Community
+        <img src="/assets/canva.png">
+    </div>
+
+    <div class="right">
+        <input type="file" name="file" id="file" class="inputfile" [(ngModel)]="photo">
+        <label for="file" id="fileLabel">
+            <img src="./assets/foto.png" alt="">
+        </label>
+
+
+        <div class="form-floating mb-5 mt-5">
+            <input type="text" [(ngModel)]="title" class="form-control" id="floatingInput" placeholder="Community Name">
+            <label for="floatingInput">Community Name</label>
+        </div>
+
+
+        <div class="form-floating mb-5">
+            <textarea class="form-control" [(ngModel)]="description" placeholder="Description" id="floatingTextarea2"
+                style="height: 100px"></textarea>
+            <label for="floatingTextarea2">Description</label>
+        </div>
+
+        <div class="error" *ngIf="validation">
+            <span> {{erro}}</span>
+        </div>
+
+        <button (click)="createCommunity()">Create</button>
+
+    </div>
+</div>

@@ -1,0 +1,28 @@
+<div class="body">
+    <div class="left">
+        <img [src]="logo">
+        <p>O Blabla ajuda você a se conectar e compartilhar com
+            pessoas ao redor do mundo todo.</p>
+    </div>
+
+    <div class="right">
+        <div class="content">
+
+            <input [(ngModel)]="email" type="text" placeholder="Email">
+
+            <br>
+
+            <input [(ngModel)]="password" type="password" placeholder="Password">
+
+            <br>
+            <button (click)="login()" id="login">Login</button>
+            <br>
+            <a href="{{'/recover/' + email}}" id="forgot">Forgot your password?</a>
+            <br>
+            <hr>
+            <br>
+            <button id="create"><a href="/createAccount">Create new acocunt</a></button>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,89 @@
+.circle {
+    width: 100px;
+    height: 100px;
+    shape-outside: circle(50% at 30%);
+    clip-path: circle(50% at 0%);
+    background: #8C52FF;
+}
+
+nav
+{
+    background-color: #EDE4FF;
+    display: flex;
+    color: black;
+    font-size: 40px;
+    align-items: center;
+    font-weight: bold;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    justify-content: space-between;
+}
+
+p
+{
+    font-size: 25px;
+    font-weight: 600;
+    margin-top: 10vh;
+}
+
+img
+{
+    border-radius: 50%;
+    width: 15vw;
+}
+
+
+#submit
+{
+    color: white;
+    background-color: #7ED957;
+    border-radius: 2em;
+    padding: .5em;
+    padding-inline: 3em;
+    margin: 1em;
+    font-size: 20px;
+    border: none;
+}
+
+#submit:hover
+{
+    background-color: #5fa740;
+}
+
+
+#delete
+{
+    color: white;
+    background-color: #FF3131;
+    border-radius: 2em;
+    padding: .5em;
+    padding-inline: 3em;
+    margin: 1em;
+    font-size: 20px;
+    border: none;
+}
+
+#delete:hover
+{
+    background-color: #bd2424;
+}
+
+label
+{
+    font-size: 20px;
+    margin-top: 3vh;
+    margin-bottom: 1vh;
+}
+
+select
+{
+    width: 15vw;
+    padding: 1em;
+    border-radius: .5em;
+    border-color: rgb(201, 201, 197);
+}
+
+
+.buttons
+{
+    margin-top: 2vh;
+}

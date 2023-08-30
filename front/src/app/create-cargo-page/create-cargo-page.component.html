@@ -1,0 +1,106 @@
+<nav class="navbar ">
+    <div>
+        {{communityName}}
+    </div>
+    <div>
+        <a href="manageCommunity/{{this.communityName}}"><i class="fa-solid fa-gears"></i></a>
+    </div>
+</nav>
+
+<div class="mx-auto">
+
+    <!-- TABS -->
+    <nav>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home"
+                type="button" role="tab" aria-controls="nav-home" aria-selected="true">Edit</button>
+            <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile"
+                type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Create</button>
+        </div>
+    </nav>
+
+    <!-- TAB UPDATE -->
+    <div class="tab-content mx-auto" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+            <div class="list-group mb-5 mt-5">
+                <button type="button" class="list-group-item list-group-item-action active" id="titulo">
+                    Cargos Existentes
+                </button>
+                <button type="button" class="list-group-item list-group-item-action" id="aa" *ngFor="let cargo of dataCargo" (click)="filter(cargo.nome)">{{cargo.nome}}</button>
+            </div>
+
+
+
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" [(ngModel)]="addPostUpdate" id="flexSwitchCheckChecked" checked>
+                <label class="form-check-label" for="flexSwitchCheckChecked">Create new Post</label>
+            </div>
+            
+
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" [(ngModel)]="editMembersUpdate">
+                <label class="form-check-label" for="flexSwitchCheckChecked">Edit Members</label>
+            </div>
+
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" [(ngModel)]="createCargoUpdate">
+                <label class="form-check-label" for="flexSwitchCheckChecked">Create new cargo</label>
+            </div>
+
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" [(ngModel)]="editCommunityupdate">
+                <label class="form-check-label" for="flexSwitchCheckChecked">Edit Community</label>
+            </div>
+
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" [(ngModel)]="deleteCommunityUpdate">
+                <label class="form-check-label" for="flexSwitchCheckChecked">Delete Community</label>
+            </div>
+
+            <button (click)="updateCargo()" id="update">Update</button>
+
+        </div>
+
+<!-- -------------------------------------------------------------------------------------------------------------------------------------------------  -->
+
+<!-- TAB CREATE -->
+
+        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+
+            <div class="form-floating mb-5 mt-5">
+                <input type="text" class="form-control" id="floatingInput" placeholder="Cargo Name" [(ngModel)]="title">
+                <label for="floatingInput">Cargo Name</label>
+            </div>
+
+            <div class="cheks" style="text-align: left !important;">
+                <div class="form-check form-switch">
+                    <input [(ngModel)]="addPost" class="form-check-input" type="checkbox" id="flexSwitchCheckChecked">
+                    <label class="form-check-label" for="flexSwitchCheckChecked">Create new Post</label>
+                </div>
+
+                <div class="form-check form-switch">
+                    <input [(ngModel)]="editMembers" class="form-check-input" type="checkbox" id="flexSwitchCheckChecked">
+                    <label class="form-check-label" for="flexSwitchCheckChecked">Edit Members</label>
+                </div>
+
+                <div class="form-check form-switch">
+                    <input  [(ngModel)]="createCargo" class="form-check-input" type="checkbox" id="flexSwitchCheckChecked">
+                    <label class="form-check-label" for="flexSwitchCheckChecked">Create new cargo</label>
+                </div>
+
+                <div class="form-check form-switch">
+                    <input [(ngModel)]="editCommunity" class="form-check-input" type="checkbox" id="flexSwitchCheckChecked">
+                    <label class="form-check-label" for="flexSwitchCheckChecked">Edit Community</label>
+                </div>
+
+                <div class="form-check form-switch">
+                    <input [(ngModel)]="deleteCommunity" class="form-check-input" type="checkbox" id="flexSwitchCheckChecked">
+                    <label class="form-check-label" for="flexSwitchCheckChecked">Delete Community</label>
+                </div>
+            </div>
+            
+            <button (click)="create()" id="create">Create Cargo</button>
+
+        </div>
+    </div>
+</div>

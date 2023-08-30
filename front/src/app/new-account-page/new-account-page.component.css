@@ -1,0 +1,99 @@
+.body {
+    background-color: #EDE4FF;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+    height: 100vh;
+    padding: 4em;
+    display: flex;
+}
+
+
+.sla
+{
+    width: 40%;
+    background-color: green;
+    display: flex;
+}
+
+.container {
+    
+    background-color: white;
+    width: 30%;
+    padding-block: 2em;
+    border: 2px solid #D9D9D9;
+}
+
+.error 
+{
+    color: red;
+    margin-block: .3em;
+}
+
+input:focus {
+    box-shadow: 0 0 0 0;
+    border-color: #7ED957;
+    outline: 0;
+}
+
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
+
+
+#create {
+    color: white;
+    background-color: #8C52FF;
+    border-radius: 2em;
+    padding: .8em;
+    font-size: 15px;
+    border: none;
+}
+
+#create:hover
+{
+    background-color: #702df7;
+}
+
+
+img {
+    height: 10vh;
+}
+
+p {
+    width: 15vw;
+    margin: 0 auto;
+    padding: 1em;
+}
+
+
+.line {
+    width: 10vw;
+    display: flex;
+    margin: 0 auto;
+    background-color: #F5F5F5;
+}
+
+
+.inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+
+#fileLabel {
+    color: #8C52FF;
+}
+
+
+#fileLabel img {
+    border-radius: 100%;
+    width: 200px;
+    height: 200px;
+}

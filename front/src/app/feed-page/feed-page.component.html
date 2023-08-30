@@ -1,0 +1,170 @@
+<div class="body">
+    <nav>
+        <div class="left">
+            <img id="logo" src="assets/teste.png">
+        </div>
+
+        <div class="right">
+
+            <div class="dropdown">
+                <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown"
+                    aria-expanded="false" style="margin-right: 2em;">
+                    <img id="person" src="{{user.foto}}">
+                </a>
+
+
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <li>
+                        <a class="dropdown-item" href="#">
+                            <i class="fa-solid fa-arrow-right-from-bracket" style="color: #000000;"></i>
+                            <button (click)="logout()" class="logout"><span
+                                    style="margin-left: 2em;">Logout</span></button>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="dropdown-item" href="">
+                            <i class="fa-solid fa-user" style="color: #000000;"></i>
+                            <span style="margin-left: 2em;">My Account</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+
+        </div>
+    </nav>
+
+    <div class="all" style="display: flex;">
+
+
+        <div class="side">
+            <div class="link">
+                <i class="fa-solid fa-plus" style="color: #000000; margin-right: 1em;"></i>
+                <a href="/newCommunity">Create</a>
+            </div>
+            <div class="link">
+                <i class="fa-solid fa-magnifying-glass" style="color: #000000;margin-right: 1em;"></i>
+                <a href="/searchCommunity/none">Discover</a>
+            </div>
+            <div class="link">
+                <i class="fa-solid fa-fire" style="color: #000000; margin-right: 1em;"></i>
+                <a href="/feed" (click)="order()">Popular</a>
+            </div>
+
+            <hr style="margin-left: 2em; margin-right: 2em; margin-top: 5em; margin-bottom: 1em;">
+
+            <div class="com">
+                <div class="teste">
+                    Your communities
+                </div>
+
+
+                <div class="item" *ngFor="let community of dataCommunity">
+                    <img src="{{community.foto}}">
+                    <button><a href="{{'/communityPost/' + community.title}}">{{ community.title }}</a></button>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="feed">
+
+            <!-- POST SEM FOTO -->
+            <div class="post" style="display:flex;" *ngFor="let post of dataPost">
+
+                <div class="card" style="width: 20vw;" *ngIf="!post.foto">
+                    <div class="card-header p-3" style="text-align: left;">
+                        <div style="display: flex; align-items: center;">
+                            <div>
+                                <img src="{{post.communityPhoto}}">
+                            </div>
+                            <div>
+                                <h6>{{post.community}}</h6>
+                                <span style="color: darkgrey;">
+                                    enviado por {{post.nickName}}
+                                    <i class="fa-solid fa-user" id="userIcon"></i>
+                                </span>
+                            </div>
+                        </div>
+
+
+                        <h5 class="card-title">{{post.title}}</h5>
+
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text" style="text-align: left;">
+                            {{post.description}}
+                        </p>
+                    </div>
+                    <div class="tag">
+                        <div class="i">
+                            <button (click)="like(post)" ><i class="fa-solid fa-up-long" id="up"></i></button>
+                        </div>
+                        <div class="value">
+                          0
+                        </div>
+                        <div class="i">
+                            <button (click)="deslike(post)"><i class="fa-solid fa-down-long" id="down"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+            <!-- POST COM FOTO -->
+            <div class="post" style="display:flex;" *ngFor="let post of dataPost">
+                <div class="card" style="width: 20vw;" *ngIf="post.foto">
+                    <div class="card-header p-3" style="text-align: left;">
+                        <div style="display: flex; align-items: center;">
+                            <div>
+                                <img src="{{post.communityPhoto}}">
+                            </div>
+                            <div>
+                                <h6>{{post.community}}</h6>
+                                <span style="color: darkgrey;">
+                                    enviado por {{post.nickName}}
+                                    <i class="fa-solid fa-user" id="userIcon"></i>
+                                </span>
+                            </div>
+                        </div>
+
+
+                        <h5 class="card-title">{{post.title}}</h5>
+
+                    </div>
+                    <img src="{{post.foto}}" class="card-img-top">
+                    <div class="card-body">
+
+                        <p class="card-text">{{post.description}}</p>
+                    </div>
+                    <div class="tag">
+                        <div class="i">
+                            <button (click)="like(post)"><i class="fa-solid fa-up-long" id="up"></i></button>
+                        </div>
+                        <div class="value">
+                            0
+                        </div>
+                        <div class="i">
+                            <button (click)="deslike(post)"><i class="fa-solid fa-down-long" id="down"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+</div>

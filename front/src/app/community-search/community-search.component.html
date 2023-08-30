@@ -1,0 +1,46 @@
+<div class="line">
+    <img src="./assets/logo.png">
+</div>
+
+<nav>
+    <div></div>
+    <div style="display: flex;">
+        <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search..."
+            [(ngModel)]="serchValue">
+        <button (click)="search()">🔍︎</button>
+    </div>
+
+    <div>
+        <a href="/feed"><i class="fa-solid fa-house" style="color: #ffffff; font-size: 25px;"></i></a>
+    </div>
+
+</nav>
+
+
+<div class="vazio" *ngIf="vazio">
+    Nenhum resultado encontrado
+</div>
+
+<div class="vazio" *ngIf="!vazio">
+    {{count}} resultado(s) encontrado(s) para : "{{sla}}"
+</div>
+
+<div style="box-sizing: border-box;">
+   
+    <ul class="cards">
+        <li *ngFor="let c of dataCommunity">
+            <a href="communityPost/{{c.title}}" class="card">
+                <img decoding="async" src="{{c.foto}}" class="card__image" alt="">
+                <div class="card__overlay">
+                    <div class="card__header">
+                        <h3 class="card__title">{{c.title}}</h3>
+                    </div>
+                    <p class="card__description">{{c.descrip}}</p>
+                </div>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+<footer style="margin-top: 5em; height: 2em;"></footer>

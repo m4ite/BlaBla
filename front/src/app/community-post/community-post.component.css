@@ -1,0 +1,168 @@
+nav img
+{
+    width: 6vw;
+    height: 6vw;
+    border-radius: 50%;
+    margin-right: 2vw;
+}
+
+nav
+{
+    margin-bottom: 10vh;
+    background-color: #EDE4FF;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+    
+
+
+nav .line{
+    background-color: #8C52FF;
+    height: 4vh;   
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; 
+}
+
+.content
+{
+    margin: 0 auto;
+    display: flex;
+    width: 60vw;
+    justify-content: space-between;
+    color: black;
+    align-items: center;
+    padding: 2em;
+}
+
+.content button
+{
+    font-weight: 500;
+    color: black;
+    background-color: #7ED957;
+    padding: 1em;
+    border: 0 none;
+    border-radius: 1.5em;
+    margin-right: 4vw;
+}
+
+.content button:hover
+{
+    background-color: #70c44d;
+}
+
+.card
+{
+    margin: 0 auto;
+    margin-bottom: 5vw;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+#down:hover
+{
+    color: #8C52FF;
+}
+
+#up:hover
+{
+    color: #7ED957;
+}
+
+.tag
+{
+    width: 50%;
+    justify-content: space-around;
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    padding-bottom: 2vh;
+}
+
+.tag i
+{
+    color: rgb(189, 189, 189);
+}
+
+.i button
+{
+    border: none;
+    background-color: transparent;
+    margin-top: .5em;
+    margin-bottom: .5em;
+}
+
+
+
+.side
+{
+    width: 18vw;
+    margin-left: 3vw;
+    padding: 2em;
+    border-radius: 1em;
+    height: fit-content;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.body
+{
+    display: flex;
+}
+
+
+.feed
+{
+    width: 60vw;
+    margin-right: 3vw;
+}
+
+
+.right a
+{
+    font-size: 30px;
+    color: #6735cc;
+}
+
+
+.sideS a 
+{
+    text-decoration: none;
+    color: black;
+}
+
+.sideS i
+{
+margin-right: 1em;
+}
+
+.sideS
+{
+    width: 18vw;
+    margin-left: 3vw;
+    padding: 1.5em;
+    border-radius: 1em;
+    height: fit-content;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+#disabled
+{
+    background-color: rgb(224, 219, 219);
+}
+
+#disabled i
+{
+    color: black;
+    margin-right: 1em;
+}
+
+.card-header img
+{
+    height: 3vw;
+    width: 3vw;
+    border-radius: 50%;
+    margin-right: 1em;
+}
+
+.card-title
+{
+    margin-top: 2em;
+    font-weight: 400;
+    font-size: 18px;
+}

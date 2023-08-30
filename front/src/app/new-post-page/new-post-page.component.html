@@ -1,0 +1,21 @@
+<nav>
+    <img src="{{community.foto}}">
+    {{communityName}}
+</nav>
+
+<div style="display: flex;">
+    <div class="left">
+        <input type="file" name="file" id="file" class="inputfile" [(ngModel)]="photo">
+        <label for="file" id="fileLabel">
+            <img src="./assets/foto.png">
+        </label>
+    </div>
+
+    <div class="right">
+        <p>New Post</p>
+        <input class="form-control form-control-lg mb-4 w-75 mx-auto" type="text" [(ngModel)]="title"  placeholder="Title">
+        <textarea class="form-control form-control-lg w-75 mx-auto" [(ngModel)]="description" placeholder="What You wanna say?"
+            style="resize: none;"></textarea>
+        <button id="publish" (click)="publish()">Publish</button>
+    </div>
+</div>

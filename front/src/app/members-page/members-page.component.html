@@ -1,0 +1,33 @@
+<nav>
+    <div style="display: flex; align-items: center;">
+        <div class="circle"></div>
+        <div class="content">
+            <i class="fa-sharp fa-solid fa-users" style="color: #000000; margin-right: 1vw;"></i>
+            Members
+        </div>
+    </div>
+
+    <div style="align-items: center;">
+        <a href="/feed"><i class="fa-solid fa-house" style="color: #000000; margin-right: 2vw; font-size: 25px;"></i></a>
+    </div>
+
+</nav>
+
+
+<div class="list">
+    <div class="member" *ngFor="let member of dataMember">
+        <img id="circle" src="{{member.foto}}">
+        <div class="rectangle">
+            <div class="esquerda">
+                <span style="font-weight: bold; font-size: 20px;">{{member.nickName}}</span>
+                <div class="embaixo" style="display: flex; align-items: center;">
+                    <i class="fa-solid fa-medal" style="color: #000000; margin-right: .5vw;"></i>
+                    {{member.cargo}}
+                </div>
+            </div>
+            <div class="direita">
+                <a href="/editMember/{{member.nickName}}/{{title}}"><i class="fa-solid fa-pencil"></i></a>
+            </div>
+        </div>
+    </div>
+</div>

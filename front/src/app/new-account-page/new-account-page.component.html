@@ -1,0 +1,58 @@
+<div class="body">
+
+
+ 
+        
+
+    <div class="container ">
+        <img src="/assets/logo.png">
+        <p>Cadastre-se para ver fotos e comentários dos seus amigos.</p>
+
+        <input type="file" name="file" id="file" class="inputfile" [(ngModel)]="photo">
+        <label for="file" id="fileLabel">
+            <img src="./assets/photo.png" alt="">
+
+            <p>Add Photo</p>
+        </label>
+
+
+        <div class="input-group mb-3 w-50 mx-auto p-2">
+            <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-user"
+                    style="color: #7ed957;"></i></span>
+            <input type="text" [(ngModel)]="nickName" class="form-control" placeholder="Usuário" aria-label="Usuário"
+                aria-describedby="basic-addon1">
+        </div>
+
+        <div class="input-group mb-3 w-50 mx-auto p-2">
+            <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-envelope"
+                    style="color: #7ed957;"></i></span>
+            <input type="email" [(ngModel)]="email" class="form-control" placeholder="Email" aria-label="Email"
+                aria-describedby="basic-addon1">
+        </div>
+       
+        <div class="input-group mb-3 w-50 mx-auto p-2">
+            <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-calendar"
+                    style="color: #7ed957;"></i></span>
+            <input type="date" [(ngModel)]="birthDate" class="form-control" placeholder="Birth Date"
+                aria-label="Birth Date" aria-describedby="basic-addon1">
+        </div>
+
+        <div class="input-group mb-3 w-50 mx-auto p-2">
+            <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-eye"
+                    style="color: #7ed957;"></i></span>
+            <input type="password" [(ngModel)]="password" required minlength="4" class="form-control"
+                placeholder="Password" aria-label="Password" aria-describedby="basic-addon1">
+        </div>
+
+        <div class="error" *ngIf="validation">
+            <span> {{erro}}</span>
+        </div> 
+
+
+        <div class="error" *ngIf="campos" >Preencha todos os campos para prosseguir!</div>
+
+        <button (click)="createAccount()" id="create">Create Account</button>
+    </div>
+
+
+</div>

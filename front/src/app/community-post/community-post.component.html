@@ -1,0 +1,135 @@
+<nav>
+    <div class="line"></div>
+
+    <div class="content">
+        <div style="display: flex;">
+            <img src="{{community.foto}}">
+            <div>
+                <span style="font-weight: 600; font-size: 30px;">{{communityTitle}}</span>
+                <div>{{qtd}} Members</div>
+            </div>
+        </div>
+
+        <div class="right">
+            <button (click)="connect(community)" *ngIf="!validation">Connect</button>
+            <button (click)="connect(community)"  disabled id="disabled" *ngIf="validation"><i class="fa-solid fa-people-group"></i> You're in!</button>
+        </div>
+    </div>
+
+
+</nav>
+
+
+<div class="body">
+
+    <div style="display: block;">
+        <div class="side">
+            <div style="font-size: 23px; font-weight: 500;">Description</div>
+            {{community.descrip}}
+            <hr>
+            <div>
+                <i class="fa-solid fa-user-check" style="margin-right: .5em;"></i> {{communityResult.owner}}
+            </div>
+            <div style="color: grey; font-size: 14px; margin-left: 2.2em;">
+                is responsable for this community
+            </div>
+            
+            
+        </div>
+
+        <div class="sideS" style="margin-top: 5vh;">
+            <a href="{{'/manageCommunity/' + communityTitle}}">
+                <i class="fa-solid fa-gears"></i>
+                Settings
+            </a>
+        </div>
+    </div>
+
+
+
+    <div class="feed">
+        <!-- POST SEM FOTO -->
+        <div class="post" style="display:flex;" *ngFor="let post of dataPost">
+
+            <div class="card" style="width: 20vw;" *ngIf="!post.foto">
+                <div class="card-header p-3" style="text-align: left;">
+                    <div style="display: flex; align-items: center;">
+                        <div>
+                            <img src="{{post.communityPhoto}}">
+                        </div>
+                        <div>
+                            <h6>{{post.community}}</h6>
+                            <span style="color: darkgrey;">
+                                enviado por {{post.nickName}}
+                                <i class="fa-solid fa-user" id="userIcon"></i>
+                            </span>
+                        </div>
+                    </div>
+
+
+                    <h5 class="card-title">{{post.title}}</h5>
+
+                </div>
+                <div class="card-body">
+                    <p class="card-text" style="text-align: left;">
+                        {{post.description}}
+                    </p>
+                </div>
+                <div class="tag">
+                    <div class="i">
+                        <button (click)="like(post)" ><i class="fa-solid fa-up-long" id="up"></i></button>
+                    </div>
+                    <div class="value">
+                      0
+                    </div>
+                    <div class="i">
+                        <button (click)="deslike(post)"><i class="fa-solid fa-down-long" id="down"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- POST COM FOTO -->
+        <div class="post" style="display:flex;" *ngFor="let post of dataPost">
+            <div class="card" style="width: 20vw;" *ngIf="post.foto">
+                <div class="card-header p-3" style="text-align: left;">
+                    <div style="display: flex; align-items: center;">
+                        <div>
+                            <img src="{{post.communityPhoto}}">
+                        </div>
+                        <div>
+                            <h6>{{post.community}}</h6>
+                            <span style="color: darkgrey;">
+                                enviado por {{post.nickName}}
+                                <i class="fa-solid fa-user" id="userIcon"></i>
+                            </span>
+                        </div>
+                    </div>
+
+
+                    <h5 class="card-title">{{post.title}}</h5>
+
+                </div>
+                <img src="{{post.foto}}" class="card-img-top">
+                <div class="card-body">
+
+                    <p class="card-text">{{post.description}}</p>
+                </div>
+                <div class="tag">
+                    <div class="i">
+                        <button (click)="like(post)"><i class="fa-solid fa-up-long" id="up"></i></button>
+                    </div>
+                    <div class="value">
+                        0
+                    </div>
+                    <div class="i">
+                        <button (click)="deslike(post)"><i class="fa-solid fa-down-long" id="down"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
