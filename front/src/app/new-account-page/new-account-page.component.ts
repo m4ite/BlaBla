@@ -31,6 +31,8 @@ export class NewAccountPageComponent {
   }
 
   createAccount() {
+
+    console.log("função ativada");
     this.campos = false;
     this.validation = false;
 
@@ -61,6 +63,7 @@ export class NewAccountPageComponent {
       cargo : this.cargo
     };
 
+    console.log(user);
 
     this.userService.Add(user)
       .subscribe({
@@ -69,6 +72,7 @@ export class NewAccountPageComponent {
         },
         error: (error: HttpErrorResponse) => {
           this.erro = error.error
+          console.log("erro")
           
           if(!this.campos)
             this.validation = true

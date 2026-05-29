@@ -110,7 +110,7 @@ public class MemberController : ControllerBase
             }
 
         }
-        member.Cargo = 3;
+        member.Cargo = 1;
 
         await repo.Add(member);
         return Ok();
