@@ -39,7 +39,7 @@ public class CommunityController : ControllerBase
         Member member = new Member();
         member.Person = id;
         member.Community = community.Id;
-        member.Cargo = 3;
+        member.Cargo = (int)CargoEnum.Usuario;;
 
         await memberRepo.Add(member);
         return Ok();
