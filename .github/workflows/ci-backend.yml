@@ -1,0 +1,52 @@
+name: CI - Backend (C#)
+
+on:
+    push:
+        branches: ["main", "dev"]
+        paths:
+            - "back/**"
+    pull_request:
+        branches: ["main", "dev"]
+        paths:
+            - "back/**"
+
+jobs:
+    build-and-test:
+        name: Build & Test .NET
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout do código
+              uses: actions/checkout@v4
+
+            - name: Configurar .NET
+              uses: actions/setup-dotnet@v4
+              with:
+                  dotnet-version: "9.0.x"
+
+            - name: Cache NuGet packages
+              uses: actions/cache@v4
+              with:
+                  path: ~/.nuget/packages
+                  key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
+                  restore-keys: |
+                      ${{ runner.os }}-nuget-
+
+            - name: Restaurar dependências
+              run: dotnet restore
+              working-directory: ./back
+
+            - name: Build
+              run: dotnet build --no-restore --configuration Release
+              working-directory: ./back
+
+            - name: Executar testes
+              run: dotnet test --no-build --configuration Release --verbosity normal
+              working-directory: ./back
+
+            - name: Publicar artefatos
+              uses: actions/upload-artifact@v4
+              with:
+                  name: backend-build
+                  path: ./back/**/publish/
+                  retention-days: 7
