@@ -243,6 +243,9 @@ TestResults/
 coveragereport/
 coverage/
 
+back/obj/
+back/bin/
+
 # Angular
 .angular/
 

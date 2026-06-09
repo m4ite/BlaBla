@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { CommunityPostComponent } from './community-post.component';
 
@@ -6,10 +7,12 @@ describe('CommunityPostComponent', () => {
   let component: CommunityPostComponent;
   let fixture: ComponentFixture<CommunityPostComponent>;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule],
       declarations: [CommunityPostComponent]
-    });
+    }).compileComponents();
+
     fixture = TestBed.createComponent(CommunityPostComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
